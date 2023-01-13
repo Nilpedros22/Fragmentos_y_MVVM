@@ -3,16 +3,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragmento2"
-    android:background="#BBFFFF">
+    android:background="#BBFFFF"
+    android:padding="20dp"
+    tools:context=".Fragmento2">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Fragmento 2"
-        android:textSize="24sp"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/ET_DatosParaEnviar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:gravity="center"/>
+        android:background="@color/white"
+        android:hint="Datos para enviar"
+        android:padding="20dp" />
+
+    <TextView
+        android:id="@+id/TV_DatosRecibidos2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ET_DatosParaEnviar2"
+        android:layout_marginTop="20dp"
+        android:background="#ddd"
+        android:padding="20dp"
+        android:text="Datos recibidos" />
+
+    <Button
+        android:id="@+id/BTN_EnviarDatos2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_DatosRecibidos2"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#F00"
+        android:padding="20dp"
+        android:text="Enviar Datos" />
 
 </RelativeLayout>
