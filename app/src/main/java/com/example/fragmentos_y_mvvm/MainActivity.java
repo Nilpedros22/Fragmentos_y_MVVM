@@ -2,24 +2,36 @@ package com.example.fragmentos_y_mvvm;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.app.UiAutomation;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button mBtnCargarFragmento1, mBtnCargarFragmento2;
+    private TextView mTvDatosCompartidos;
+    private ItemModelView mItemModelView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mItemModelView = new ViewModelProvider(this).get(ItemModelView.class);
+
+        mItemModelView.getDatosLiveData().observe(this, itemObservado -> {
+            mTvDatosCompartidos.setText(itemObservado);
+        });
+
+        mItemModelView = new ViewModelProvider(this).get(ItemModelView.class);
         mBtnCargarFragmento1 = findViewById(R.id.BTN_Fragmento1);
         mBtnCargarFragmento2 = findViewById(R.id.BTN_Fragmento2);
+        mTvDatosCompartidos = findViewById(R.id.TV_DatosCompartidos);
 
         CargarFragmento(new Fragmento1());
         /*getSupportFragmentManager().beginTransaction()

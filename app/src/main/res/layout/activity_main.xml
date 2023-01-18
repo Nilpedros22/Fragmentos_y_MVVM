@@ -10,7 +10,17 @@
     <FrameLayout
         android:id="@+id/FL_ContenidoFragmentos"
         android:layout_width="match_parent"
-        android:layout_height="400dp" />
+        android:layout_height="500dp" />
+
+    <TextView
+        android:id="@+id/TV_DatosCompartidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FL_ContenidoFragmentos"
+        android:background="#DDD"
+        android:padding="20dp"
+        android:text="Datos compatidos"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/BTN_Fragmento1"
