@@ -36,12 +36,18 @@ public class Fragmento1 extends Fragment {
 
         mItemModelView = new ViewModelProvider(this).get(ItemModelView.class);
 
+        mItemModelView.getDatosLiveData().observe(getViewLifecycleOwner(), itemObservado -> {
+            mTvDatosCompartidos.setText(itemObservado);
+        });
+
         mBtnCompartirDatos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Set de la variable del ModelView.
-                mItemModelView.setDatosLiveData(mEtDatosParaCompartir.getText().toString());
-                mTvDatosCompartidos.setText(mEtDatosParaCompartir.getText().toString());
+                mItemModelView.setDatosLiveData(
+                        mEtDatosParaCompartir.getText().toString());
+                mTvDatosCompartidos.setText(
+                        mEtDatosParaCompartir.getText().toString());
             }
         });
         return v;
